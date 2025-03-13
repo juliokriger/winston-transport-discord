@@ -4,6 +4,8 @@
 
 [Winston](https://github.com/winstonjs/winston) logging transport for emitting log entries to a Discord channel.
 
+## This fork fix the problem when the title length is greater than 256 characters.
+
 ## Compatibility
 
 - Node 16+
