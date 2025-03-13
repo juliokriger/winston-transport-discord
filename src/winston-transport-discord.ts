@@ -171,6 +171,10 @@ const utils = {
         let title = message,
             description = utils.formatError( info );
 
+        if(title && title.length > 256) {
+            title = title.substring(0, 253) + '...';
+        }
+
         // Strip the error message out of the title.
         if ( description ) {
             const match = /Error: (.+)\n/gm.exec( description );
@@ -381,9 +385,11 @@ export class WebhookHandler implements DiscordTransportHandler {
     async log( info: any, meta: any = {}, next: () => void ) {
         const embed = utils.createEmbed( info, meta, this.colors );
 
-        await this.client.send({
-            embeds: [ embed ]
-        });
+        try {
+            await this.client.send({ embeds: [ embed ] });
+        } catch ( err ) {
+            console.error( 'Failed sending to Discord.', err );
+        }
 
         next();
     }
