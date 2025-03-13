@@ -1,7 +1,7 @@
 {
     "name": "juliokriger-winston-transport-discord",
-    "version": "1.0.3",
-    "description": "Winston logging transport for emitting log entries to a Discord channel, with fixs",
+    "version": "1.0.0",
+    "description": "Winston logging transport for emitting log entries to a Discord channel, with fixes",
     "author": "Julio Kriger <juliokriger@gmail.com>",
     "keywords": [
         "discord",
@@ -14,7 +14,10 @@
         "winston3"
     ],
     "homepage": "https://github.com/juliokriger/winston-transport-discord#readme",
-    "repository": "https://github.com/juliokriger/winston-transport-discord.git",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/juliokriger/winston-transport-discord.git"
+    },
     "bugs": {
         "url": "https://github.com/juliokriger/winston-transport-discord/issues"
     },
